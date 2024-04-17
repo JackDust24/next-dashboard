@@ -67,20 +67,20 @@ const Register = () => {
   return (
     sessionStatus !== "authenticated" && (
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="bg-[#212121] p-8 rounded shadow-md w-96">
+        <div className="bg-[#313131] p-8 rounded shadow-md w-96">
           <h1 className="text-4xl text-center font-semibold mb-8 text-white">
             Register
           </h1>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="w-full border text-sm border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
               placeholder="Email"
               required
             />
             <input
               type="password"
-              className="w-full border border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
+              className="w-full border text-sm border-gray-300 text-black rounded px-3 py-2 mb-4 focus:outline-none focus:border-blue-400 focus:text-black"
               placeholder="Password"
               required
             />

@@ -8,22 +8,17 @@ export const POST = async (request: any) => {
 
   await connect();
 
-  // Checks if email already in use
   const existingUser = await User.findOne({ email });
 
-  if (existingUser) {
-    return new NextResponse("Email is already in use", { status: 400 });
-  }
-
   const hashedPassword = await bcrypt.hash(password, 5);
-  const newUser = new User({
-    email,
-    password: hashedPassword,
-  });
+  existingUser.password = hashedPassword;
+
+  existingUser.resetToken = undefined;
+  existingUser.resetTokenExpiry = undefined;
 
   try {
-    await newUser.save();
-    return new NextResponse("user is registered", { status: 200 });
+    await existingUser.save();
+    return new NextResponse("user's password is updated", { status: 200 });
   } catch (err: any) {
     return new NextResponse(err, {
       status: 500,

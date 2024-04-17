@@ -8,13 +8,13 @@ const Navbar = () => {
   const { data: session }: any = useSession();
   return (
     <div>
-      <ul className="flex justify-between m-10 item-center">
+      <ul className="flex w-full justify-between p-4 items-center bg-[#40b42b] text-[#143E14]">
         <div>
           <Link href="/">
             <li>Home</li>
           </Link>
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-10 items-center">
           <Link href="/dashboard">
             <li>Dashboard</li>
           </Link>
@@ -35,19 +35,20 @@ const Navbar = () => {
                   onClick={() => {
                     signOut();
                   }}
-                  className="p-2 px-5 -mt-1 bg-blue-800 rounded-full"
+                  className="p-2 px-5 bg-[#143E14] rounded-full text-white"
                 >
                   Logout
                 </button>
               </li>
-              {/* <div>
+              <div className="items-center">
                 <Image
+                  className="border-4 border-black dark:border-slate-500 drop-shadow-xl shadow-black rounded-full mx-auto"
                   src={session.user?.image as string}
-                  fill
+                  width={48}
+                  height={48}
                   alt=""
-                  className="object-cover rounded-full"
                 />
-              </div> */}
+              </div>
             </>
           )}
         </div>

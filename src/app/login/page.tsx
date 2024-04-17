@@ -83,7 +83,7 @@ function LoginSession({
 }) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24 text-white">
-      <div className="bg-[#212121] p-8 rounded shadow-md w-96">
+      <div className="bg-[#313131] p-8 rounded shadow-md w-96">
         <h1 className="text-4xl text-center font-semibold mb-8">Login</h1>
         <form onSubmit={onSubmit}>
           <input
@@ -107,22 +107,33 @@ function LoginSession({
           </button>
           <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
         </form>
+        <div>
+          <p className="text-white text-base mb-4">
+            Forget password?{"  "}
+            <Link
+              className="text-blue-500 hover:underline ml-2"
+              href="/forget-password"
+            >
+              Reset Here
+            </Link>
+          </p>
+        </div>
         <div className="flex flex-col items-center mt-6">
           <button
-            className="w-full bg-sky-500 py-2 px-6 rounded-md mb-2 text-lg"
+            className="w-full bg-white py-2 px-6 rounded-md mb-2 text-lg text-black"
             onClick={() => signIn("google")}
           >
             Sign in with Google
           </button>
           <button
-            className="w-full bg-sky-500 py-2 px-6 rounded-md mb-2 text-lg"
+            className="w-full bg-black py-2 px-6 rounded-md mb-2 text-lg"
             onClick={() => signIn("github")}
           >
             Sign in with Github
           </button>
         </div>
 
-        <div className="text-center mt-2 text-[20px] text-sky-50">- OR -</div>
+        <div className="text-center text-gray-500 mt-4">- OR -</div>
         <Link
           className="block text-center text-blue-500 hover:underline mt-2"
           href="/register"
